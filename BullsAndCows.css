@@ -1,0 +1,40 @@
+/* HTML{background-color: rgb(4, 20, 26);} */
+HTML{background-color:rgb(65, 35, 22)}
+.boundary {
+    display: block;
+    width: 96%;
+
+
+
+
+}
+.LetsPlay {
+    font-size: 4rem;
+    font-family: lobster;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(90, 118, 146);
+    border-radius: 10px;
+    padding: 2%;
+}
+.PlayButton {
+    position: relative;
+    font-size: 4rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    align-content: center;
+    /* height: 150px;
+    width: 200px; */
+    background-color: rgb(90, 118, 146);
+    box-shadow: 0px 0px 60px rgb(44, 5, 5);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 3px solid darkred;
+    width: 20%;
+}
+p {
+    margin: 0px;
+}
+
