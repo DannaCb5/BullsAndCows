@@ -1,21 +1,22 @@
 /* HTML{background-color: rgb(4, 20, 26);} */
-HTML{background-color:rgb(65, 35, 22)}
+/* HTML{background-image: url('cows.jpg')} */
 .boundary {
     display: block;
-    width: 96%;
-
-
-
+    width: 100%;
+    height: 900px;
 
 }
 .LetsPlay {
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: lobster;
     justify-content: center;
     text-align: center;
-    background-color: rgb(90, 118, 146);
+    background-color: rgb(46, 145, 245);
+    box-shadow: 0px 0px 40px inset;
+    text-shadow: 2px 2px 10px;
     border-radius: 10px;
-    padding: 2%;
+    padding: 20% 2%;
+    border: 3px solid rgb(48, 19, 5);
 }
 .PlayButton {
     position: relative;
@@ -25,14 +26,16 @@ HTML{background-color:rgb(65, 35, 22)}
     align-content: center;
     /* height: 150px;
     width: 200px; */
-    background-color: rgb(90, 118, 146);
-    box-shadow: 0px 0px 60px rgb(44, 5, 5);
+    background-color: rgb(46, 145, 245);
+    box-shadow: 0px 0px 20px rgb(44, 5, 5) inset;
+    /* box-shadow: 0px 0px 10px rgb(44, 5, 5); */
     margin-right: auto;
     margin-left: auto;
     margin-top: 20px;
+    text-shadow: 2px 2px 10px;
     border-radius: 20px;
-    border: 3px solid darkred;
-    width: 20%;
+    border: 3px solid rgb(20, 7, 1);
+    width: 200px;
 }
 p {
     margin: 0px;
