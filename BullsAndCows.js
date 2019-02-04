@@ -1,127 +1,114 @@
 "use strict"
 
-let secretNumber = Math.round((Math.random() * 10000) + 9999);
+let secretNumber;
 let guess = "0";
 let guesses = 0;
 let turn = "first";
-let digit1, digit2, digit3, digit4, digit5;
+let guessChar1, guessChar2, guessChar3, guessChar4, guessChar5;
 let times = 1;
-let secret1, secret2, secret3, secret4, secret5;
 let characters = 0;
-let roundcount = 0;
+let roundCount = 0;
+let bulls = 0;
+let cows = 0;
 
 // Generate a Secret Number and assign the characters to variables
 
-secretNumber = Math.round((Math.random() * 10000) + 9999);
-console.log("The Secret Number is " + secretNumber);
-secretNumber = secretNumber.toString();
-
-secret1 = secretNumber.charAt(0);
-secret2 = secretNumber.charAt(1);
-secret3 = secretNumber.charAt(2);
-secret4 = secretNumber.charAt(3);
-secret5 = secretNumber.charAt(4);
-
-console.log(secret1, secret2, secret3, secret4, secret5);
+function getUserInputNumber()
+function validateUserInputIsNumber()
+function secretNumberGenerator() {
+    Math.round((Math.random() * 99999) + 9999);
+    console.log("The Secret Number is " + secretNumber);
+    secretNumber = secretNumber.toString();
+    return secretNumber;
+}
+function calculateCowsBullsCompare()
 
 
-
-// Ask player to enter 5 characters one digit at a time and assign to variables. Returns bulls and cows count to the player
+// Ask player to enter 5 characters one guess at a time and assign to variables. Returns bulls and cows count to the player
 
 end:
-    while (roundcount < 10) {
-        let bulls = 0;
-        let cows = 0;
-        let charCount = 0;
-        let digitCount = 0;
-        let digitx = 0;
-        roundcount = roundcount++;
-        while (guesses < 5) {
-            let guess = prompt("Guess the " + turn + " digit of your 5 digit number.");
+    while (roundCount < 10) { //Try Again
+        let secretChar = 0;
+        let guessCount = 0;
+        let guessCharX = 0;
+        
+        if (roundCount = 10) {
+            "Sorry your turns are up"
+        } else {
+        let tryAgain = prompt('You can try up to 10 times. Would you like to try to guess a number.  Type "yes" or "no"')
+            if (tryAgain == "no") {
+                alert("Quitting so soon?");
+                break end;
+            } else if (tryAgain != "yes") { alert('Please enter "yes" or "no"');
+            } else {
+                alert("Good Luck");
+            }
+        }
+        roundCount = roundCount++;
+        while (guesses < 5) { // Collect Guess
+            let guess = prompt("Guess the " + turn + " guess of your 5 guess number.");
             if (guess == null) {
                 break;
             } else if (parseInt(guess) > 9) {
-                console.log("line 14");
-                console.log("Guess must be 1 digit whole number between 0 and 9, your number was" + guess);
+                console.log("Guess must be 1 guess whole number between 0 and 9, your number was" + guess);
                 break end;
             } else if (guesses == 0) {
-                console.log("line 17");
                 turn = "second";
-                console.log("line 18");
-                digit1 = guess;
-                console.log("line 19");
-                console.log("line 20 Your first digit is " + digit1);
+                guessChar1 = guess;
+                console.log("Your first guess is " + guessChar1);
                 guesses = guesses + 1;
-                console.log("line 21 incremented to " + guesses);
             } else if (guesses == 1) {
-                console.log("line 22");
                 turn = "third";
-                console.log("line 28");
-                digit2 = guess;
-                console.log("line 24");
-                console.log("Your second digit is " + digit2);
-                console.log("line 25");
+                guessChar2 = guess;
+                console.log("Your second guess is " + guessChar2);
                 guesses = guesses + 1;
-                console.log("line 26 incremented to " + guesses);
             } else if (guesses == 2) {
-                console.log("line 27");
                 turn = "forth";
-                console.log("line 28");
-                digit3 = guess;
-                console.log("line 29");
-                console.log("Your third digit is " + digit3);
-                console.log("line 30");
+                guessChar3 = guess;
+                console.log("Your third guess is " + guessChar3);
                 guesses = guesses + 1;
-                console.log("line 31 incremented to " + guesses);
             } else if (guesses == 3) {
-                console.log("line 32");
                 turn = "fifth";
-                console.log("line 32");
-                digit4 = guess;
-                console.log("line 33");
-                console.log("line 34 Your forth digit is " + digit4);
+                guessChar4 = guess;
+                console.log("Your forth guess is " + guessChar4);
                 guesses = guesses + 1;
-                console.log("line 35 incremented to " + guesses);
             } else {
-                console.log("line 36 else statement");
-                digit5 = guess;
-                console.log("line 37 let digit5 statement");
-                console.log("Your fifth digit is " + digit5);
-                console.log("line 38");
+                guessChar5 = guess;
+                console.log("Your fifth guess is " + guessChar5);
                 guesses = guesses + 1;
                 console.log("incremented to " + guesses);
-                console.log("line 39");
-                alert("You guessed " + digit1 + digit2 + digit3 + digit4 + digit5);
+                alert("You guessed " + guessChar1 + guessChar2 + guessChar3 + guessChar4 + guessChar5);
             }
         }
+        // Compare guesses (guessCount [1..5]) to secretNumber (secretChar [1..5])
 
-        // Compare guesses (digit1..5) to secret number (Secret1..5)
-        while (digitCount <= 4) { 
+        while (guessCount <= 4) { //Assign one character to guessCharX
             
-            console.log("My Digit X is" + digitx);
-            if (digitCount === 0) {
-                digitx = digit1;
-            } else if (digitCount === 1) {
-                digitx = digit2;
-            } else if (digitCount === 2) {
-                digitx = digit3;
-            } else if (digitCount === 3) {
-                digitx = digit4;
-            } else if (digitCount === 4) { alert(110)
-                digitx = digit5;
+            if (guessCount === 0) {
+                guessCharX = parseInt(guessChar1);
+            } else if (guessCount === 1) {
+                guessCharX = parseInt(guessChar2);
+            } else if (guessCount === 2) {
+                guessCharX = parseInt(guessChar3);
+            } else if (guessCount === 3) {
+                guessCharX = parseInt(guessChar4);
+            } else if (guessCount === 4) {
+                guessCharX = parseInt(guessChar5);
             } else {}
-            digitCount = digitCount + 1; 
-            alert(114);
+            console.log("My guess X is" + guessCharX);
+            guessCount = guessCount + 1; console.log(guessCount);
 
-            while (charCount <= 4) { 
-                alert(115)
-                if (digitx == secretNumber.charAt(charCount) && (charCount != (digitCount + 1))) { alert(116)
+            while (secretChar <= 4) { //Test current guessCharX against each of the secret number characters
+                if (secretChar != guessCount && (guessCharX == secretNumber.charAt(secretChar))) 
+                { console.log("This is not the same character of both the guess and the secret " + secretChar + " " + guessCount + " but there is a match " + guessCharX + " " + secretNumber.charAt(secretChar)) 
                     cows = cows + 1;
-                } else if (digitx == secretNumber.charAt(charCount) && (charCount == (digitCount + 1))) {
+                } else if (guessCharX == secretNumber.charAt(secretChar)) { 
                     bulls = bulls + 1;
-                } else {}
-                charCount = charCount + 1;
+                } else {  }
+                secretChar = secretChar + 1;
+                console.log("The secret character count is " + secretChar + " and the guessed character count it " + guessCount);
             }
         }
         console.log(bulls + " Bulls " + cows + " cows");
+
     }

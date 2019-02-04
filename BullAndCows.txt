@@ -1,0 +1,35 @@
+BullsAndCows.js:18 The Secret Number is 15761
+BullsAndCows.js:54 line 20 Your first digit is 2
+BullsAndCows.js:63 Your second digit is 5
+BullsAndCows.js:73 Your third digit is 7
+BullsAndCows.js:83 line 34 Your forth digit is 6
+BullsAndCows.js:90 Your fifth digit is 0
+BullsAndCows.js:101 My Digit X is0
+BullsAndCows.js:101 My Digit X is2
+BullsAndCows.js:101 My Digit X is5
+BullsAndCows.js:101 My Digit X is7
+BullsAndCows.js:101 My Digit X is6
+BullsAndCows.js:126 0 Bulls 0 cows
+BullsAndCows.js:101 My Digit X is0
+BullsAndCows.js:101 My Digit X is2
+BullsAndCows.js:101 My Digit X is5
+BullsAndCows.js:101 My Digit X is7
+BullsAndCows.js:101 My Digit X is6
+BullsAndCows.js:126 0 Bulls 0 cows
+BullsAndCows.js:101 My Digit X is0
+BullsAndCows.js:101 My Digit X is2
+BullsAndCows.js:101 My Digit X is5
+BullsAndCows.js:101 My Digit X is7
+BullsAndCows.js:101 My Digit X is6
+BullsAndCows.js:126 0 Bulls 0 cows
+BullsAndCows.js:101 My Digit X is0
+BullsAndCows.js:101 My Digit X is2
+BullsAndCows.js:101 My Digit X is5
+BullsAndCows.js:101 My Digit X is7
+BullsAndCows.js:101 My Digit X is6
+BullsAndCows.js:126 0 Bulls 0 cows
+BullsAndCows.js:101 My Digit X is0
+BullsAndCows.js:101 My Digit X is2
+BullsAndCows.js:101 My Digit X is5
+BullsAndCows.js:101 My Digit X is7
+BullsAndCows.js:101 My Digit X is6
