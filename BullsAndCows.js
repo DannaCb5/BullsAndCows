@@ -1,5 +1,22 @@
 "use strict"
 
+// Bulls and Cows is a guessing game:
+
+// A Secret number is generated and compared to guessed numbers until the player guesses the secret number or runs out of turns.  
+
+// Example:  
+
+//Say the secret number is A B C D E and the player guesses A B C D E.  Guess digit A is compared to digit A of the secret number, then the same for secret digit B, secret digit C and so on.  Then the guess digit B is compared the same way and so on.  
+
+// If the guess digit in the A position matches the secret digit in the A position or any time positions match that counts as a bull.  
+
+// If guess digit A matches secret digits B, C, D or E or any time the positions don't match. then it is a cow.  
+
+// So Secret Number 3 5 6 2 3 and guess number 4 5 2 6 9 would return 1 bull and 2 cows. The matching 5s are a bull and the 2 and 6 are cows.
+
+// Once a guess has been made and the bulls and cows are returned for that guess, the player is prompted to try again until they either quit, win, or run out of their 10 trys. 
+
+
 let secretNumber;
 let guess = "0";
 let guesses = 0;
@@ -14,14 +31,15 @@ let secretChar = 0;
 let guessCount = 0;
 let guessCharX = 0;
 
-// 1. secretNumberGenerator();
-// 2. askIfPlayerWantsToPlay();
-// 3. validateUserInputIsNumber();
-// 4. getUserInputNumber();
-// 5. calculateCowsBullsCompare();
-// 5a. function assignGuessCharX();
-// 5b. function compareGuessCharXToSecretChar();
-document.body.addEventListener("click", function(event)
+// 1. function secretNumberGenerator();
+// 2. function askIfPlayerWantsToPlay();
+// 3. function validateUserInputIsNumber();
+// 4. function getUserInputNumber();
+// 5. function calculateCowsBullsCompare();
+//      5a. function assignGuessCharX();
+//      5b. function compareGuessCharXToSecretChar();
+
+
 // 1. Generate a Secret Number and assign the characters to variables
 secretNumberGenerator();
 
@@ -31,17 +49,18 @@ function secretNumberGenerator() {
     secretNumber = secretNumber.toString();
     askIfPlayerWantsToPlay();
 }
-// 2. Ask player to enter 5 characters one guess at a time and assign to variables. Returns bulls and cows count to the player
+// 2. Ask player to enter 5 characters one guess at a time that will be assigned to variables. Later returns bulls and cows count to the player
 function askIfPlayerWantsToPlay() {
-     
     while (roundCount < 10) { //Try Again
+        alert("roundCount " + roundCount);
         if (roundCount == 10) {
             alert("Sorry your turns are up");
         } else {
-            let tryAgain = prompt('You can try up to 10 times. Would you like to try to guess a number.  Type "yes" or "no"')
+            let tryAgain = prompt('You can try up to 10 times. Would you like to try to guess a number.  Type "yes" or "no"'); 
+            alert(tryAgain);
             if (tryAgain == "no") {
-                alert("Quitting so soon?");
-                break end;
+                alert("Quitting so soon? roundCount " + roundCount);
+                return;
             } else if (tryAgain != "yes") {
                 alert('Please enter "yes" or "no"');
             } else {
@@ -56,7 +75,8 @@ function askIfPlayerWantsToPlay() {
 // 3. Validate Guess
 function validateUserInputIsNumber() {
     guess = prompt("Guess the " + turn + " digit of your 5 digit number.");
-    if (guess == null) { console.long("guess  " + guess);
+    if (guess == null) {
+        alert("guess " + guess);
         return;
     } else if (guess > 9) {
         console.log("Guess must be a 1 digit whole number between 0 and 9, your number was " + guess);
@@ -68,7 +88,7 @@ function validateUserInputIsNumber() {
 function getUserInputNumber() {
     if (guesses == 0) {
         turn = "second";
-        guessChar1 = guess; 
+        guessChar1 = guess;
         alert("guessChar1 = " + guessChar1)
         console.log("Your first digit is " + guessChar1);
         guesses = guesses + 1;
@@ -90,17 +110,17 @@ function getUserInputNumber() {
         alert("guessChar4 = " + guessChar4)
         console.log("Your forth digit is " + guessChar4);
         guesses = guesses + 1;
-    } else {
+    } else if (guesses == 4){
         guessChar5 = guess;
         alert("guessChar5 = " + guessChar5)
         console.log("Your fifth digit is " + guessChar5);
         guesses = guesses + 1;
         console.log("incremented to " + guesses);
         alert("You guessed " + guessChar1 + guessChar2 + guessChar3 + guessChar4 + guessChar5);
+        
+    } else {
         calculateCowsBullsCompare();
     }
-    validateUserInputIsNumber();
-    
 }
 
 
@@ -126,25 +146,26 @@ function assignGuessCharX() {
 
 // 5b. Compare guesses (guessCount [1..5]) to secretNumber (secretChar [1..5])
 function compareGuessCharXToSecretChar() {
-    if (secretChar != guessCount && (guessCharX == secretNumber.charAt(secretChar))) {
-        console.log("This is not the same character of both the guess and the secret " + secretChar + " " + guessCount + " but there is a match " + guessCharX + " " + secretNumber.charAt(secretChar))
-        cows = cows + 1;
-    } else if (guessCharX == secretNumber.charAt(secretChar)) {
-        bulls = bulls + 1;
-    } else {}
-    secretChar = secretChar + 1;
-    console.log("The secret character count is " + secretChar + " and the guessed character count it " + guessCount);
+    while (secretChar <= 4) {
+        if (secretChar != guessCount && (guessCharX == secretNumber.charAt(secretChar))) {
+            console.log("This is not the same character of both the guess and the secret " + secretChar + " " + guessCount + " but there is a match " + guessCharX + " " + secretNumber.charAt(secretChar))
+            cows = cows + 1;
+        } else if (guessCharX == secretNumber.charAt(secretChar)) {
+            bulls = bulls + 1;
+        } else {}
+        secretChar = secretChar + 1;
+        console.log("The secret character count is " + secretChar + " and the guessed character count it " + guessCount);
+    }
 }
 
 // 5. Calculate the quantity of cows and bulls.
 function calculateCowsBullsCompare() {
-    while (guessCount <= 4) { //Assign one character to guessCharX
+    { //Assign one character to guessCharX
         assignGuessCharX();
         console.log(assignGuessCharX);
-        while (secretChar <= 4) { //Test current guessCharX against each of the secret number charactersfunction assignGuessCharX();
-            compareGuessCharXToSecretChar();
-            // console.log(compareGuessCharXToSecretChar);
-        }
+        //Test current guessCharX against each of the secret number charactersfunction assignGuessCharX();
+        compareGuessCharXToSecretChar();
+        // console.log(compareGuessCharXToSecretChar);
     }
-    askIfPlayerWantsToPlay();
 }
+askIfPlayerWantsToPlay();
