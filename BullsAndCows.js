@@ -30,7 +30,7 @@ let cows = 0;
 let secretChar = 0;
 let guessCount = 0;
 let guessCharX = 0;
-
+let returnClose;
 // 1. function secretNumberGenerator();
 // 2. function askIfPlayerWantsToPlay();
 // 3. function validateUserInputIsNumber();
@@ -47,10 +47,13 @@ function secretNumberGenerator() {
     secretNumber = Math.round((Math.random() * 99999) + 9999);
     console.log("The Secret Number is " + secretNumber);
     secretNumber = secretNumber.toString();
+    let returnClose = 1
     askIfPlayerWantsToPlay();
 }
 // 2. Ask player to enter 5 characters one guess at a time that will be assigned to variables. Later returns bulls and cows count to the player
 function askIfPlayerWantsToPlay() {
+
+    
     while (roundCount < 10) { //Try Again
         alert("roundCount " + roundCount);
         if (roundCount == 10) {
@@ -168,4 +171,3 @@ function calculateCowsBullsCompare() {
         // console.log(compareGuessCharXToSecretChar);
     }
 }
-askIfPlayerWantsToPlay();
